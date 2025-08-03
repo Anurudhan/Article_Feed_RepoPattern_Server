@@ -8,7 +8,7 @@ const authController = new AuthController();
 router.post('/login', authController.login.bind(authController)); 
 router.delete('/logout', authenticateUser, authController.logout.bind(authController));
 router.post('/signup', authController.signup.bind(authController));
-router.route('/')
+router.route('/user')
   .get(authenticateUser, authController.getUser.bind(authController))
 router.patch('/profile', authenticateUser, authController.updateProfile.bind(authController));
 router.patch('/password', authenticateUser, authController.updatePassword.bind(authController));

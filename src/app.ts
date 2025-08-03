@@ -34,6 +34,9 @@ app.use(limiter);
 // Routes
 app.use("/", router);
 
+app.get("/",(req:Request,res:Response)=>{
+  res.send('✅ Knowaria backend is up and running!');
+})
 // Health Check Route
 app.get("/health", (req: Request, res: Response) => {
   res.status(StatusCodes.OK).json({
