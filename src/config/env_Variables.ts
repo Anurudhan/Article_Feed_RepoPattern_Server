@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 
 dotenv.config();
+console.log(process.env.FRONTEND_URL,"this is our front end url")
 
 export const envVaribales = {
     PORT:process.env.PORT||3000,
