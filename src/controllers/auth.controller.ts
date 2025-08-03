@@ -49,8 +49,17 @@ export class AuthController {
   }
 
   async logout(req: Request, res: Response) {
-    res.clearCookie('accessToken');
-    res.clearCookie('refreshToken');
+    res.clearCookie('accessToken', {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
+    });
+
+    res.clearCookie('refreshToken', {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
+    });
     res.status(StatusCodes.OK).json({ message: Messages.AUTH.LOGOUT_SUCCESS });
   }
 
